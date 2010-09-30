@@ -120,7 +120,7 @@ module RSolr::Connectable
     page = page.to_s.to_i-1
     page = page < 1 ? 0 : page
     start = page * per_page
-    request[:params].merge! :start => start, :rows => per_page
+    request[:params].merge! :start => start, :rows => per_page if request[:params]
   end
   
   module PaginatedDocSet
